@@ -1,0 +1,1 @@
+gradle clean build&cd build&cd libs&java -jar ProgettoF1_Sikri_Twinkal-1.0-SNAPSHOT.jar
