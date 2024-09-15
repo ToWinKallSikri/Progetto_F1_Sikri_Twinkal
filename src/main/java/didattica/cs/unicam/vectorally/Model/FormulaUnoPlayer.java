@@ -62,7 +62,6 @@ public abstract class FormulaUnoPlayer implements PositionedGameObject {
     /**
      * Aggiorna lo stato del giocatore a "finito" e imposta il tempo e la posizione di arrivo.
      *
-     * @param finishTime Il tempo di arrivo del giocatore.
      * @param finishPosition La posizione di arrivo del giocatore.
      */
     public void win(int finishPosition) {

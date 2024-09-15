@@ -23,7 +23,6 @@ public class FormulaUnoGameDirector implements GameDirector<FormulaUnoPlayer, Fo
     /**
      * Crea un nuovo direttore di gioco per la partita di Formula Uno.
      *
-     * @param map la mappa del gioco
      * @param players i giocatori partecipanti alla partita
      */
     public FormulaUnoGameDirector(FormulaUnoPlayer[] players) {

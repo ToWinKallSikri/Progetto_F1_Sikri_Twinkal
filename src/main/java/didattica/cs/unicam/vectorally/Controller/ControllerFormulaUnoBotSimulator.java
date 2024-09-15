@@ -126,15 +126,21 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
      * @return una mossa per gestire il caso in cui non ci sono mosse (il giocatore non si muove)
      */
     private FormulaUnoMove handleNoMoves(FormulaUnoPlayer player) {
-        return new FormulaUnoMove(player.getCurrentPosition(), new Coordinate(0, 0), new Coordinate(0, 0), PlayerStatus.ON_TRACK, player.getCurrentSection());
+        return new FormulaUnoMove(player.getCurrentPosition(), new Coordinate(0, 0), new Coordinate(0, 0),
+                                  PlayerStatus.ON_TRACK, player.getCurrentSection());
     }
 
-    
+    /**
+     *
+     * @param moves
+     * @return
+     */
     private List<FormulaUnoMove> filterBySpeed(List<FormulaUnoMove> moves) {
        List<FormulaUnoMove> list = moves.stream().filter(x -> (Math.abs(x.getNewSpeed().getX()) <= maxSpeed) && 
                                                               (Math.abs(x.getNewSpeed().getY()) <= maxSpeed ))
                                                               .filter(x -> x.getCurrentSection() != -1 &&
-                                                                    map.isIntoMap(x.getNewPosition().sum(x.getNewSpeed()), x.getCurrentSection()) != -1)
+                                                                    map.isIntoMap(x.getNewPosition().sum(x.getNewSpeed()),
+                                                                                  x.getCurrentSection()) != -1)
                                                               .toList();
        if(list.isEmpty()){
             FormulaUnoMove move = moves.stream().reduce(null, (a,b) -> {

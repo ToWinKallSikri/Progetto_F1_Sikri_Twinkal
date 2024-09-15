@@ -1,5 +1,7 @@
-package didattica.cs.unicam.vectorally.Model;
+package didattica.cs.unicam.vectorally.test.Model;
 
+import didattica.cs.unicam.vectorally.Model.Coordinate;
+import didattica.cs.unicam.vectorally.Model.FormulaUnoMap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
