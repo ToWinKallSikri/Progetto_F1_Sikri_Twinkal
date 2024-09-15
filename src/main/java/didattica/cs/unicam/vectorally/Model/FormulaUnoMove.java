@@ -88,6 +88,11 @@ public class FormulaUnoMove {
         return this.newStatus;
     }
 
+    /**
+     * Restituisce la sezione corrente in cui si trova il giocatore.
+     *
+     * @return La sezione corrente.
+     */
     public int getCurrentSection(){
         return this.currentSection;
     }

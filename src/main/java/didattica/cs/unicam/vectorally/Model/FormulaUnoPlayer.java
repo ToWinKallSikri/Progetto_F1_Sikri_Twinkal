@@ -144,10 +144,18 @@ public abstract class FormulaUnoPlayer implements PositionedGameObject {
         return finishPosition;
     }
 
+    /**
+     * Imposta la sezione corrente del giocatore.
+     * @param currentSection La sezione corrente del giocatore.
+     */
     public void setCurrentSection(int currentSection){
         this.currentSection = currentSection;
     }
 
+    /**
+     * Restituisce la sezione corrente del giocatore.
+     * @return La sezione corrente del giocatore.
+     */
     public int getCurrentSection(){
         return this.currentSection;
     }

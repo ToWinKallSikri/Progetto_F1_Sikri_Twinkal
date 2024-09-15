@@ -42,8 +42,6 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
     @Override
     public FormulaUnoMove getMove(FormulaUnoPlayer player) {
         List<FormulaUnoMove> moves = generateAndFilterLegalMoves(player);
-        //moves.forEach(x -> System.out.println(x.getNewStatus()));
-        //System.out.println(moves.size());
         if (moves.isEmpty()) {
             return handleNoMoves(player);
         }
@@ -131,12 +129,12 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
     }
 
     /**
-     *
-     * @param moves
-     * @return
+     * Metodo per filtrare le mosse in base alla velocità
+     * @param moves lista delle mosse possibili da filtrare
+     * @return lista delle mosse filtrate
      */
     private List<FormulaUnoMove> filterBySpeed(List<FormulaUnoMove> moves) {
-       List<FormulaUnoMove> list = moves.stream().filter(x -> (Math.abs(x.getNewSpeed().getX()) <= maxSpeed) && 
+       List<FormulaUnoMove> list = moves.stream().filter(x -> (Math.abs(x.getNewSpeed().getX()) <= maxSpeed) &&
                                                               (Math.abs(x.getNewSpeed().getY()) <= maxSpeed ))
                                                               .filter(x -> x.getCurrentSection() != -1 &&
                                                                     map.isIntoMap(x.getNewPosition().sum(x.getNewSpeed()),

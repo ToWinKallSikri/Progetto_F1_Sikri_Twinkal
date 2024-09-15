@@ -1,4 +1,4 @@
-package didattica.cs.unicam.vectorally.test.Controller;
+package didattica.cs.unicam.Test;
 
 import didattica.cs.unicam.vectorally.Model.Coordinate;
 import didattica.cs.unicam.vectorally.Controller.FormulaUnoMapParser;

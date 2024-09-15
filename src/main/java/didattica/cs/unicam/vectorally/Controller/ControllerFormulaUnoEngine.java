@@ -23,7 +23,7 @@ public class ControllerFormulaUnoEngine implements ControllerGameEngine<FormulaU
      * Costruisce un nuovo ControllerFormulaUnoEngine con il numero di giocatori predefinito (4).
      */
     public ControllerFormulaUnoEngine() {
-        this(4);
+        this(1);
     }
 
     /**
@@ -95,4 +95,5 @@ public class ControllerFormulaUnoEngine implements ControllerGameEngine<FormulaU
         FormulaUnoMove move = player.getNextMove();
         this.gameDirector.checkAndApplyMove(player, move);
     }
+
 }
