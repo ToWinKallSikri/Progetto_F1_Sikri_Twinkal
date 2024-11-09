@@ -35,6 +35,11 @@ public class FormulaUnoBotPlayer extends FormulaUnoPlayer {
     public FormulaUnoMove getNextMove() {
         return botSimulator.getMove(this);
     }
+
+    @Override
+    public String getStrategy() {
+        return botSimulator.getStrategy();
+    }
 }
 
 

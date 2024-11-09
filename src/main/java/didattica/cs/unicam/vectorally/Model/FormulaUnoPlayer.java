@@ -167,4 +167,12 @@ public abstract class FormulaUnoPlayer implements PositionedGameObject {
      * @return La prossima mossa del giocatore.
      */
     public abstract FormulaUnoMove getNextMove();
+
+    /**
+     * Metodo astratto per ottenere la strategia del giocatore.
+     * Deve essere implementato dalle classi concrete.
+     *
+     * @return La strategia del giocatore.
+     */
+    public abstract String getStrategy();
 }

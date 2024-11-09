@@ -21,6 +21,11 @@ class FormulaUnoPlayerTest {
         public FormulaUnoMove getNextMove() {
             return null; // Implementazione fittizia per il test
         }
+
+        @Override
+        public String getStrategy() {
+            return null; // Implementazione fittizia per il test
+        }
     }
 
     private TestPlayer player;

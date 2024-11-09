@@ -4,7 +4,6 @@ import didattica.cs.unicam.vectorally.Model.Dto.FormulaUnoInfo;
 import didattica.cs.unicam.vectorally.Model.Dto.FormulaUnoMapInfo;
 import didattica.cs.unicam.vectorally.Model.Dto.FormulaUnoPlayerInfo;
 import didattica.cs.unicam.vectorally.Model.FormulaUnoMap;
-import didattica.cs.unicam.vectorally.Model.FormulaUnoMove;
 import didattica.cs.unicam.vectorally.Model.FormulaUnoPlayer;
 import didattica.cs.unicam.vectorally.Model.PlayerStatus;
 import java.util.Arrays;
@@ -49,7 +48,8 @@ public class FormulaUnoInfoBuilder implements GameInfoBuilder<FormulaUnoPlayer[]
                         player.getVelocity(),
                         player.getStatus(),
                         player.getFinishPosition(),
-                        player.getFinishTime()))
+                        player.getFinishTime(),
+                        player.getStrategy()))
                 .sorted(comparator)
                 .collect(Collectors.toList());
         FormulaUnoMapInfo mapInfo = new FormulaUnoMapInfo(map.getSections());
