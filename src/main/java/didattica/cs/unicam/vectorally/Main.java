@@ -1,5 +1,4 @@
 package didattica.cs.unicam.vectorally;
-
 import didattica.cs.unicam.vectorally.View.FormulaUnoViewController;
 
 public class Main {

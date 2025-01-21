@@ -22,12 +22,12 @@ public record FormulaUnoPlayerInfo(String name, Coordinate currentPosition, Coor
     public String toString() {
         return "PlayerInfo{" +
                 "name='" + name + '\'' +
+                ", strategy=" + strategy +
                 ", currentPosition=" + currentPosition +
                 ", velocity=" + velocity +
                 ", status=" + status + (status == PlayerStatus.FINISHED ?
                                         ", finishPosition=" + finishPosition +
                                         ", finishTime=" + finishTime +
-                                        ", strategy=" + strategy +
                                         '}' : "");
     }
 }

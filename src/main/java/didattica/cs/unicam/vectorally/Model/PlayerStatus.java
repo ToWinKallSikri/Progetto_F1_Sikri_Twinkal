@@ -1,7 +1,7 @@
 package didattica.cs.unicam.vectorally.Model;
 
 /**
- * Enum che rappresenta lo stato di un giocatore
+ * Enumerazione che rappresenta lo stato di un giocatore
  *
  * @author Twinkal Sikri - 119251
  */

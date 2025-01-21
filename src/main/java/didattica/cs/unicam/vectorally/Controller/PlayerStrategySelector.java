@@ -2,9 +2,21 @@ package didattica.cs.unicam.vectorally.Controller;
 import didattica.cs.unicam.vectorally.Model.PlayerStrategy;
 import java.util.Random;
 
+/**
+ * La classe PlayerStrategySelector seleziona casualmente una strategia di velocità per un giocatore.
+ * La selezione è casuale, ma con una probabilità del 20% di selezionare una strategia con velocità 4 o 5.
+ * Le strategie con velocità <= 3 hanno una probabilità del 80% di essere selezionate.
+ * @see PlayerStrategy
+ *
+ * @author Twinkal Sikri - 119251
+ */
 public class PlayerStrategySelector {
-    private static final double HIGH_SPEED_PROBABILITY = 0.39; // Probabilità del 20% di selezionare 4 o 5
+    private static final double HIGH_SPEED_PROBABILITY = 0.25; // Probabilità del 20% di selezionare 4 o 5
 
+    /**
+     * Seleziona casualmente una strategia di velocità per un giocatore.
+     * @return una strategia di velocità casuale
+     */
     public static PlayerStrategy getRandomSpeedEnum() {
         PlayerStrategy[] values = PlayerStrategy.values();
         int[] frequencies = new int[values.length];

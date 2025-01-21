@@ -17,7 +17,7 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
     private final FormulaUnoEmptyPositionChecker emptyChecker;
     private final FormulaUnoMap map;
     private final double maxSpeed; // Limite massimo di velocità
-    private final PlayerStrategy strategy;
+    private PlayerStrategy strategy;
     /**
      * Costruisce un nuovo ControllerFormulaUnoBotSimulator con il checker delle posizioni vuote e la mappa della pista.
      *
@@ -173,8 +173,19 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
         return move;
     }
 
+    /**
+     * Metodo per ottenere la strategia di gioco del giocatore
+     * @return la strategia di gioco del giocatore
+     */
     public String getStrategy() {
         return strategy.name();
     }
 
+    /**
+     * Metodo per impostare la strategia di gioco del giocatore
+     * @param str la strategia di gioco del giocatore
+     */
+    public void setStrategy(PlayerStrategy str) {
+        this.strategy = str;
+    }
 }
