@@ -87,7 +87,7 @@ public class FormulaUnoViewController {
      * @param info Le informazioni finali del gioco.
      */
     private void printGameResult(FormulaUnoInfo info) {
-        System.out.println("\n\t*** GAME OVER ***\n"); // Stampa un messaggio di fine gioco
+        System.out.println("\n\t*^*^* GAME OVER *^*^*\n"); // Stampa un messaggio di fine gioco
         printCurrentGameState(info); // Stampa le informazioni finali del gioco
     }
 }

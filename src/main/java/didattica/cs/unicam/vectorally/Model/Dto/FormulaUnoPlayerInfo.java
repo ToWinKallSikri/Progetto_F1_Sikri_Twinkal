@@ -20,15 +20,23 @@ public record FormulaUnoPlayerInfo(String name, Coordinate currentPosition, Coor
 
     @Override
     public String toString() {
-        return "PlayerInfo{" +
-                "name='" + name + '\'' +
-                ", strategy=" + strategy +
-                ", currentPosition=" + currentPosition +
-                ", velocity=" + velocity +
-                ", status=" + status + (status == PlayerStatus.FINISHED ?
-                                        ", finishPosition=" + finishPosition +
-                                        ", finishTime=" + finishTime +
-                                        '}' : "");
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+
+        String statusColor = status == PlayerStatus.CRASHED ? RED : (status == PlayerStatus.FINISHED ? GREEN : "");
+
+        return "PlayerInfo { " +
+                "Name = '" + statusColor + name + RESET + '\'' +
+                ", Strategy = " + statusColor + strategy + RESET +
+                ", Status = " + statusColor + status + RESET +
+                (status != PlayerStatus.CRASHED ?
+                        ", CurrentPosition = " + currentPosition +
+                                ", Velocity = " + velocity +
+                                (status == PlayerStatus.FINISHED ?
+                                        ", finishPosition = " + statusColor + finishPosition + RESET +
+                                                ", finishTime = " + finishTime +
+                                                " }" : "") : " }");
     }
 }
 

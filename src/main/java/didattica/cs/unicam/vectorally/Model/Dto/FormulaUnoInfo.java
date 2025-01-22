@@ -14,7 +14,7 @@ public record FormulaUnoInfo(boolean finished, List<FormulaUnoPlayerInfo> player
 
     @Override
     public String toString() {
-        return "GameInfo{" +
+        return "GameInfo {" +
                 "finished=" + finished +
                 ", playerInfo=" + playerInfo +
                 ", mapInfo=" + mapInfo +

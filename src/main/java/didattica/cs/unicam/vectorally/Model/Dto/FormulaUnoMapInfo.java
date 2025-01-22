@@ -14,8 +14,9 @@ public record FormulaUnoMapInfo(List<FormulaUnoSection> sections) {
 
     @Override
     public String toString() {
-        return "\t*** Map Info ***" + 
-            IntStream.range(0, sections.size()).boxed().map(x -> "Section n° "  + (x + 1) + " " + sections.get(x)).reduce("", (a, b) -> a + "\n" + b);
+        return "\t=== *^* Map Info *^* ===" +
+            IntStream.range(0, sections.size()).boxed().map(x -> "Section n. "  + (x + 1) + " "
+            + sections.get(x)).reduce("", (a, b) -> a + "\n" + b);
     }
 }
 
