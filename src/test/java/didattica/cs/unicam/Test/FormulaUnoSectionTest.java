@@ -50,6 +50,30 @@ class FormulaUnoSectionTest {
     }
 
     @Test
+    public void testIsIntoSection() {
+        // Create a section with a radius of 5
+        Coordinate start = new Coordinate(20, 70);
+        Coordinate end = new Coordinate(60, 40);
+        double radius = 5;
+        FormulaUnoSection section = new FormulaUnoSection(start, end, radius);
+
+        // Test coordinates inside the section
+        assertTrue(section.isIntoSection(new Coordinate(25, 65)));
+        assertTrue(section.isIntoSection(new Coordinate(30, 60)));
+        assertTrue(section.isIntoSection(new Coordinate(50, 50)));
+
+        // Test coordinates outside the section
+        assertFalse(section.isIntoSection(new Coordinate(10, 80)));
+        assertFalse(section.isIntoSection(new Coordinate(70, 30)));
+        assertFalse(section.isIntoSection(new Coordinate(0, 0)));
+
+        // Test coordinates on the boundary of the section
+        assertTrue(section.isIntoSection(new Coordinate(20, 70)));
+        assertTrue(section.isIntoSection(new Coordinate(60, 40)));
+    }
+
+
+    @Test
     void testGetStartingPointsForPlayers_ValidPlayerCount() {
         Coordinate[] startingPoints = section.getStartingPointsForPlayers(2);
         assertEquals(2, startingPoints.length );

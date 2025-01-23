@@ -1,6 +1,7 @@
 package didattica.cs.unicam.vectorally.Model;
 
 import didattica.cs.unicam.vectorally.Controller.ControllerFormulaUnoBotSimulator;
+import didattica.cs.unicam.vectorally.Controller.PlayerStrategySelector;
 
 /**
  * La classe FormulaUnoBotPlayer estende FormulaUnoPlayer per rappresentare un giocatore controllato dal bot
@@ -12,6 +13,7 @@ import didattica.cs.unicam.vectorally.Controller.ControllerFormulaUnoBotSimulato
 public class FormulaUnoBotPlayer extends FormulaUnoPlayer {
 
     private final ControllerFormulaUnoBotSimulator botSimulator;
+    private final PlayerStrategy strategy;
 
     /**
      * Costruisce un nuovo giocatore bot con il nome specificato, la posizione iniziale e il simulatore del bot.
@@ -24,6 +26,7 @@ public class FormulaUnoBotPlayer extends FormulaUnoPlayer {
                                ControllerFormulaUnoBotSimulator botSimulator) {
         super(name, startingPosition);
         this.botSimulator = botSimulator;
+        this.strategy = PlayerStrategySelector.getRandomSpeedEnum();
     }
 
     /**
@@ -37,9 +40,13 @@ public class FormulaUnoBotPlayer extends FormulaUnoPlayer {
     }
 
     @Override
-    public String getStrategy() {
-        return botSimulator.getStrategy();
+    public PlayerStrategy getStrategy() {
+        return this.strategy;
     }
+
+
+
+
 }
 
 

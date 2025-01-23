@@ -66,10 +66,10 @@ public class ControllerFormulaUnoEngine implements ControllerGameEngine<FormulaU
     public void startGame() {
         FormulaUnoEmptyPositionChecker emptyChecker = new FormulaUnoEmptyPositionChecker();
         FormulaUnoPlayer[] players = new FormulaUnoPlayer[this.numberOfPlayers];
+        ControllerFormulaUnoBotSimulator botSimulator = new ControllerFormulaUnoBotSimulator(emptyChecker, map);
         Coordinate[] startingPositions = map.getSection(0).getStartingPointsForPlayers(this.numberOfPlayers);
         for (int i = 0; i < numberOfPlayers; i++) {
-            players[i] = new FormulaUnoBotPlayer("player_" + i, startingPositions[i],
-                                                 new ControllerFormulaUnoBotSimulator(emptyChecker, map));
+            players[i] = new FormulaUnoBotPlayer("player_" + i, startingPositions[i],botSimulator);
             emptyChecker.addGameObject(players[i]);
         }
         this.gameDirector = new FormulaUnoGameDirector(players);

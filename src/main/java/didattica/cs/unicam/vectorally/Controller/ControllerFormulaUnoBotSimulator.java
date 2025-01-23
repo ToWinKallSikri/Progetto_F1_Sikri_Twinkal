@@ -16,8 +16,8 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
 
     private final FormulaUnoEmptyPositionChecker emptyChecker;
     private final FormulaUnoMap map;
-    private final double maxSpeed; // Limite massimo di velocità
-    private PlayerStrategy strategy;
+    //private final double maxSpeed; // Limite massimo di velocità
+    //private PlayerStrategy strategy;
     /**
      * Costruisce un nuovo ControllerFormulaUnoBotSimulator con il checker delle posizioni vuote e la mappa della pista.
      *
@@ -27,8 +27,8 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
     public ControllerFormulaUnoBotSimulator(FormulaUnoEmptyPositionChecker emptyChecker, FormulaUnoMap map) {
         this.emptyChecker = emptyChecker;
         this.map = map;
-        this.strategy = PlayerStrategySelector.getRandomSpeedEnum();
-        this.maxSpeed = strategy.getSpeedValue();
+        //this.strategy = PlayerStrategySelector.getRandomSpeedEnum();
+        //this.maxSpeed = strategy.getSpeedValue();
     }
 
     /**
@@ -50,7 +50,7 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
             return moves.stream().filter(x -> x.getNewStatus() == PlayerStatus.FINISHED).findFirst().get();
         if(moves.stream().anyMatch(x -> x.getNewStatus() == PlayerStatus.ON_TRACK))
             moves = moves.stream().filter(x -> x.getNewStatus() == PlayerStatus.ON_TRACK).toList();
-        moves = filterBySpeed(moves);
+        moves = filterBySpeed(moves, player.getStrategy().getSpeedValue());
         return chooseBestMove(moves);
     }
 
@@ -134,7 +134,7 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
      * @param moves lista delle mosse possibili da filtrare
      * @return lista delle mosse filtrate
      */
-    private List<FormulaUnoMove> filterBySpeed(List<FormulaUnoMove> moves) {
+    private List<FormulaUnoMove> filterBySpeed(List<FormulaUnoMove> moves, double maxSpeed) {
        List<FormulaUnoMove> list = moves.stream().filter(x -> (Math.abs(x.getNewSpeed().getX()) <= maxSpeed) &&
                                                               (Math.abs(x.getNewSpeed().getY()) <= maxSpeed ))
                                                               .filter(x -> x.getCurrentSection() != -1 &&
@@ -171,21 +171,5 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
             move = move.getNewPosition().getDistance(target) < moves.get(i).getNewPosition().getDistance(target) ? move : moves.get(i);
         }
         return move;
-    }
-
-    /**
-     * Metodo per ottenere la strategia di gioco del giocatore
-     * @return la strategia di gioco del giocatore
-     */
-    public String getStrategy() {
-        return strategy.name();
-    }
-
-    /**
-     * Metodo per impostare la strategia di gioco del giocatore
-     * @param str la strategia di gioco del giocatore
-     */
-    public void setStrategy(PlayerStrategy str) {
-        this.strategy = str;
     }
 }

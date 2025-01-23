@@ -49,7 +49,7 @@ public class FormulaUnoInfoBuilder implements GameInfoBuilder<FormulaUnoPlayer[]
                         player.getStatus(),
                         player.getFinishPosition(),
                         player.getFinishTime(),
-                        player.getStrategy()))
+                        player.getStrategy().toString()))
                 .sorted(comparator)
                 .collect(Collectors.toList());
         FormulaUnoMapInfo mapInfo = new FormulaUnoMapInfo(map.getSections());

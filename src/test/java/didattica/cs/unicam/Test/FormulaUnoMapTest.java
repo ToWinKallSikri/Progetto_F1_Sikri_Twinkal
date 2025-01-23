@@ -34,9 +34,9 @@ class FormulaUnoMapTest {
 
     @Test
     void testIsIntoMap() {
-        assertTrue(map.isIntoMap(new Coordinate(4, 0), 0) == 0);
+        assertEquals(0, map.isIntoMap(new Coordinate(4, 0), 0));
         assertFalse(map.isIntoMap(new Coordinate(15, 10), 1) != -1);
-        assertTrue(map.isIntoMap(new Coordinate(24, 0), 2) == 2);
+        assertEquals(2, map.isIntoMap(new Coordinate(24, 0), 2));
     }
 
     @Test

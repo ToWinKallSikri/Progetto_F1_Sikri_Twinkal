@@ -1,9 +1,6 @@
 package didattica.cs.unicam.Test;
 
-import didattica.cs.unicam.vectorally.Model.Coordinate;
-import didattica.cs.unicam.vectorally.Model.FormulaUnoMove;
-import didattica.cs.unicam.vectorally.Model.FormulaUnoPlayer;
-import didattica.cs.unicam.vectorally.Model.PlayerStatus;
+import didattica.cs.unicam.vectorally.Model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +20,7 @@ class FormulaUnoPlayerTest {
         }
 
         @Override
-        public String getStrategy() {
+        public PlayerStrategy getStrategy() {
             return null; // Implementazione fittizia per il test
         }
     }

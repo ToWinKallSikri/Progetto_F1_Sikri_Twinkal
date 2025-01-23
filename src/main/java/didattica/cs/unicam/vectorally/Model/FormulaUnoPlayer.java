@@ -174,5 +174,5 @@ public abstract class FormulaUnoPlayer implements PositionedGameObject {
      *
      * @return La strategia del giocatore.
      */
-    public abstract String getStrategy();
+    public abstract PlayerStrategy getStrategy();
 }

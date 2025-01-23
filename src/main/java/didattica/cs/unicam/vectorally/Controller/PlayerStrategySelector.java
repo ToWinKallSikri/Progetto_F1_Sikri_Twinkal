@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * La classe PlayerStrategySelector seleziona casualmente una strategia di velocità per un giocatore.
  * La selezione è casuale, ma con una probabilità del 20% di selezionare una strategia con velocità 4 o 5.
- * Le strategie con velocità <= 3 hanno una probabilità del 80% di essere selezionate.
+ * Le strategie con velocità minore o uguale di 3 hanno una probabilità del 75% di essere selezionate.
  * @see PlayerStrategy
  *
  * @author Twinkal Sikri - 119251
