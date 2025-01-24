@@ -16,8 +16,6 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
 
     private final FormulaUnoEmptyPositionChecker emptyChecker;
     private final FormulaUnoMap map;
-    //private final double maxSpeed; // Limite massimo di velocità
-    //private PlayerStrategy strategy;
     /**
      * Costruisce un nuovo ControllerFormulaUnoBotSimulator con il checker delle posizioni vuote e la mappa della pista.
      *
@@ -27,13 +25,11 @@ public class ControllerFormulaUnoBotSimulator implements ControllerBotSimulator<
     public ControllerFormulaUnoBotSimulator(FormulaUnoEmptyPositionChecker emptyChecker, FormulaUnoMap map) {
         this.emptyChecker = emptyChecker;
         this.map = map;
-        //this.strategy = PlayerStrategySelector.getRandomSpeedEnum();
-        //this.maxSpeed = strategy.getSpeedValue();
     }
 
     /**
      * Determina la prossima mossa del giocatore bot. Se non ci sono mosse legali, gestisce un incidente.
-     * Altrimenti, sceglie la mossa migliore e verifica se la velocità è troppo alta.
+     * Altrimenti, sceglie la mossa migliore e verifica se la velocità è troppo alta (anche in base alla strategia).
      * Se il bot ha raggiunto la linea del traguardo, gestisce la vittoria.
      * Verifica se il bot è uscito dalla pista o ha avuto una collisione.
      *
